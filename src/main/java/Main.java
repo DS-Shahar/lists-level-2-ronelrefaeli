@@ -131,7 +131,7 @@ public class Main {
         }
         curr = curr.getNext();
     }
-           public static Node<Integer> exlist2ex1(Node<Integer> L1, Node<Integer> L2) {
+           public static Node<Integer> exlist2ex1(Node<Integer> L1, Node<Integer> L2) { o(n) סיבוכיות 
         Node<Integer> dummy = new Node<>(-1);
         Node<Integer> tail = dummy;
         while (L1 != null && L2 != null) {
@@ -157,7 +157,7 @@ public class Main {
         return dummy.getNext();
     }
 
-    public static Node<Integer> exlist2ex2(Node<Integer> head) {
+    public static Node<Integer> exlist2ex2(Node<Integer> head) {   o(n בריבוע) סיבוכיות 
         Node<Integer> newHead = null;
         Node<Integer> newTail = null;
         while (head != null) {
@@ -187,14 +187,14 @@ public class Main {
         return newHead;
     }
 
-    public static int exlist2ex3(Node<Integer> head, int val) {
+    public static int exlist2ex3(Node<Integer> head, int val) { o(n) סיבוכיות 
         int index = 0;
         int sum = 0;
         boolean found = false;
         Node<Integer> p = head;
         while (p != null) {
             if (p.getValue() == val) {
-                int distance = index;
+                int distance = index;                     
                 Node<Integer> temp = p;
                 int endDist = 0;
                 while (temp.getNext() != null) {
@@ -210,7 +210,7 @@ public class Main {
         return found ? sum : -1;
     }
 
-    public static boolean exlist2ex4(Node<Integer> head) {
+    public static boolean exlist2ex4(Node<Integer> head) { o(n בריבוע) סיבוכיות 
         Node<Integer> p = head;
         while (p != null) {
             Node<Integer> q = p.getNext();
@@ -224,17 +224,17 @@ public class Main {
         return true;
     }
 
-    public static Node<Integer> exlist2ex5(Node<Integer> head) {
+    public static Node<Integer> exlist2ex5(Node<Integer> head) {       o(n בריבוע) סיבוכיות 
         Node<Integer> dummy = new Node<>(-1);
         Node<Integer> tail = dummy;
         Node<Integer> p = head;
         while (p != null) {
             Node<Integer> q = dummy.getNext();
             boolean exists = false;
-            while (q != null) {
+            while (q != null) {                                                    
                 if (q.getValue() == p.getValue()) {
-                    exists = true;
-                    break;
+                    exists = true;                                  
+                   
                 }
                 q = q.getNext();
             }
