@@ -250,3 +250,62 @@ public class Main {
     return dummy.getNext();
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+public static Node<Integer> ex2(Queue<Integer> q) {
+        Node<Integer> r = new Node<Integer>(-1);
+        Queue<Integer> q2 = copyQ(q);
+        Node<Integer> b = r;
+        while (!q2.isEmpty()) 
+        {
+            r.setNext(new Node<Integer>(max(q2)));
+            r = r.getNext();
+        }
+        return b.getNext();
+    }
+
+    public static int max(Queue<Integer> q) {
+        Queue<Integer> q2 = copyQ(q);
+        int max = 0;
+        int y = q2.remove();
+        while (!q2.isEmpty()&& y!=0) 
+        {
+            if (y > max) 
+                max = y;
+            int y = q2.remove();
+        }
+        return max;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
