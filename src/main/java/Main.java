@@ -301,6 +301,45 @@ public static Node<Integer> ex2(Queue<Integer> q) {
 
 
 
+סעיף א //
+    public void tree11a(Node node)
+        {
+        if (node == null) return;
+        System.out.print(node.value + " ");
+        tree11a(node.left);
+        tree11a(node.right);
+    }
+
+    // סעיף (ב) - tree11b
+    public void tree11b(Node node) {
+        if (node == null) return;
+        System.out.print(node.value + " ");
+        tree11b(node.left);
+        tree11b(node.right);
+    }
+
+    // סעיף (ג) - tree11c
+    public void tree11c(Node node) {
+        if (node == null) return;
+        System.out.print(node.value + " ");
+        tree11c(node.left);
+        tree11c(node.right);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
