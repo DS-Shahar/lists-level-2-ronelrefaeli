@@ -261,7 +261,8 @@ public class Main {
 
 
 
-public static Node<Integer> ex2(Queue<Integer> q) {
+public static Node<Integer> ex2(Queue<Integer> q) 
+{
         Node<Integer> r = new Node<Integer>(-1);
         Queue<Integer> q2 = copyQ(q);
         Node<Integer> b = r;
@@ -273,7 +274,8 @@ public static Node<Integer> ex2(Queue<Integer> q) {
         return b.getNext();
     }
 
-    public static int max(Queue<Integer> q) {
+    public static int max(Queue<Integer> q) 
+    {
         Queue<Integer> q2 = copyQ(q);
         int max = 0;
         int y = q2.remove();
@@ -302,29 +304,84 @@ public static Node<Integer> ex2(Queue<Integer> q) {
 
 
 סעיף א //
-    public void tree11a(Node node)
-        {
-        if (node == null) return;
-        System.out.print(node.value + " ");
-        tree11a(node.left);
-        tree11a(node.right);
-    }
+   public void tree11a(Node node)
+{
+    if (node == null)
+        return;
 
-    // סעיף (ב) - tree11b
-    public void tree11b(Node node) {
-        if (node == null) return;
+    if (node.value % 2 == 0 &&
+        (node.left == null || node.left.value % 2 == 0) &&
+        (node.right == null || node.right.value % 2 == 0))
         System.out.print(node.value + " ");
-        tree11b(node.left);
-        tree11b(node.right);
-    }
 
-    // סעיף (ג) - tree11c
-    public void tree11c(Node node) {
-        if (node == null) return;
-        System.out.print(node.value + " ");
-        tree11c(node.left);
-        tree11c(node.right);
-    }
+    tree11a(node.left);
+    tree11a(node.right);
+}
+
+
+    // סעיף ב
+    public int tree11b(Node node)
+{
+    if (node == null)
+        return 0;
+
+    int count = 0;
+
+    if (node.value % 2 == 0 &&
+        (node.left == null || node.left.value % 2 == 0) &&
+        (node.right == null || node.right.value % 2 == 0))
+        count = 1;
+
+    return count + tree11b(node.left) + tree11b(node.right);
+}
+
+
+    // סעיף (ג) 
+   public boolean tree11c(Node node)
+{
+    if (node == null)
+        return false;
+
+    if (node.value % 2 == 0 && (node.left == null || node.left.value % 2 == 0) &&
+        (node.right == null || node.right.value % 2 == 0))
+        return true;
+
+    if (tree11c(node.left))
+        return true;
+
+    if (tree11c(node.right))
+        return true;
+
+    return false;
+}
+
+
+סעיף ד////
+public boolean tree11d(Node node)
+{
+    if (node == null)
+        return true;
+
+    if (node.value % 2 != 0)
+        return false;
+
+    if (node.left != null && node.left.value % 2 != 0)
+        return false;
+
+    if (node.right != null && node.right.value % 2 != 0)
+        return false;
+
+    if (!tree11d(node.left))
+        return false;
+
+    if (!tree11d(node.right))
+        return false;
+
+    return true;
+}
+
+
+ 
 
 
 
