@@ -327,9 +327,7 @@ public static Node<Integer> ex2(Queue<Integer> q)
 
     int count = 0;
 
-    if (node.value % 2 == 0 &&
-        (node.left == null || node.left.value % 2 == 0) &&
-        (node.right == null || node.right.value % 2 == 0))
+    if (node.value % 2 == 0 && (node.left == null || node.left.value % 2 == 0) &&(node.right == null || node.right.value % 2 == 0))
         count = 1;
 
     return count + tree11b(node.left) + tree11b(node.right);
@@ -342,8 +340,7 @@ public static Node<Integer> ex2(Queue<Integer> q)
     if (node == null)
         return false;
 
-    if (node.value % 2 == 0 && (node.left == null || node.left.value % 2 == 0) &&
-        (node.right == null || node.right.value % 2 == 0))
+    if (node.value % 2 == 0 && (node.left == null || node.left.value % 2 == 0) && (node.right == null || node.right.value % 2 == 0))
         return true;
 
     if (tree11c(node.left))
