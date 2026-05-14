@@ -402,3 +402,55 @@ public boolean tree11d(Node node)
 
 
 
+
+
+
+
+
+
+
+
+public static Node<Integer> ex1(Node<Integer> list) {
+    Node<Integer> dummy = new Node<>(0);
+    Node<Integer> t = dummy;
+    Node<Integer> p = list;
+    int sum = 0;
+
+    while (p != null) 
+    {
+        sum += p.getValue();
+
+        if (p.getNext() != null && p.getValue() < p.getNext().getValue()) {
+            p = p.getNext();
+        } 
+        else 
+        {
+            t.setNext(new Node<>(sum));
+            t = t.getNext();
+            sum = 0;
+            p = p.getNext();
+        }
+    }
+    return dummy.getNext();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
